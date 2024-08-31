@@ -10,7 +10,7 @@ export type TRoom = {
   image: string;
 };
 
-export type ApiResponse = {
+export type TApiResponse = {
   success: boolean;
   statusCode: number;
   message: string;
