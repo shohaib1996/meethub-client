@@ -39,7 +39,7 @@ const Navbar = () => {
             <a className="btn btn-ghost text-xl">MeetHub</a>
           </div>
           <div className="navbar-center hidden lg:flex">
-            <ul className="menu menu-horizontal px-1">
+            <ul className="space-x-3 menu-horizontal px-1">
               <NavbarLinks></NavbarLinks>
             </ul>
           </div>

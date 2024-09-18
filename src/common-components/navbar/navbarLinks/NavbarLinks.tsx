@@ -20,14 +20,14 @@ const NavbarLinks = () => {
     <>
       {navbarItem.map((item, index) => (
         <li key={index}>
-          <NavLink
+         <NavLink
             to={routes[index]}
             className={({ isActive, isPending }) =>
               isPending
                 ? "pending"
                 : isActive
-                ? "text-base text-white bg-black"
-                : "text-base"
+                ? "text-base transition-all duration-300 ease-in-out text-white bg-gray-500 p-2 rounded-md scale-105"
+                : "text-base transition-all duration-300 ease-in-out"
             }
           >
             {item}

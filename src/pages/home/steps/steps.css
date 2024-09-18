@@ -1,0 +1,14 @@
+.custom-steps .ant-steps-item-icon {
+    font-size: 24px; /* Increase step number size */
+    color: black; /* Change the color to black */
+  }
+  
+  .custom-steps .ant-steps-item-finish .ant-steps-item-icon {
+    background-color: black;
+  }
+  
+  .custom-steps .ant-steps-item-process .ant-steps-item-icon {
+    background-color: black;
+    color: white; /* White text for the active step */
+  }
+  

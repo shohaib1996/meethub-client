@@ -1,0 +1,50 @@
+[
+    {
+      "_id": "654b4969168d6860d49d6cb2",
+      "user_name": "John Smith",
+      "comment": "My recent interaction with this service was extremely positive. I was amazed by their knowledge and professionalism. As a doctor, I understand the importance of expertise, and they certainly have it. They addressed my concerns and provided excellent service. I'd recommend their services to others.",
+      "rating": 4,
+      "img": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT-4YbvE-R4dDvsyWHMCfRCfq1lA1PMs6kPweGsPGkPtgebbR0h",
+      "profession": "Doctor"
+    },
+    {
+      "_id": "654b4969168d6860d49d6cb4",
+      "user_name": "Michael Brown",
+      "comment": "My recent experience with this service was highly positive. The staff was friendly and made the entire process enjoyable. As a teacher, I value a smooth experience, and they delivered that. I highly recommend them to anyone seeking professional help. I was thoroughly impressed.",
+      "rating": 5,
+      "img": "https://cdn.vox-cdn.com/thumbor/yIoKynT0Jl-zE7yWwzmW2fy04xc=/0x0:706x644/1400x1400/filters:focal(353x322:354x323)/cdn.vox-cdn.com/uploads/chorus_asset/file/13874040/stevejobs.1419962539.png",
+      "profession": "Teacher"
+    },
+    {
+      "_id": "654b4969168d6860d49d6cb1",
+      "user_name": "Alice Johnson",
+      "comment": "I had the pleasure of experiencing their service recently, and I must say it was exceptional. The staff was professional and knowledgeable, patiently answering all my questions. As a software engineer.",
+      "rating": 5,
+      "img": "https://t3.gstatic.com/images?q=tbn:ANd9GcQ1Rl12Z0pjHTauUjwl8m4ppFgDdMU5QQG5ut_GpivG9JrlLam3vdUwkaBw3oIJHtjxSLwEeA",
+      "profession": "Software Engineer"
+    },
+    {
+      "_id": "654b4969168d6860d49d6cb6",
+      "user_name": "David Lee",
+      "comment": "I recently had a great experience with this service. I am thoroughly satisfied with their approach. As an accountant, I appreciate professionalism, and I highly recommend their services.",
+      "rating": 4,
+      "img": "https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcTRwm-Mstryx4ERMZZntUXmXKi2DbVaJzzzKNlLhYnQgosFRR9AyIlwWl4wJyVnH9rjuixKWUJjqKVBcoc",
+      "profession": "Accountant"
+    },
+    {
+      "_id": "654b4969168d6860d49d6cb5",
+      "user_name": "Emily White",
+      "comment": "I'm truly impressed with the service I received. Their work was excellent, and the attention to detail was impeccable. As an architect, I value quality, and they provided that. I highly recommend their service.",
+      "rating": 5,
+      "img": "https://t3.gstatic.com/images?q=tbn:ANd9GcQDuRKw5gD6rQ1SnhErB0cDjG86zxxZN5ZJT4cuWzuKC_wNt43pZhSaVYF3uGem2vNudtRQ",
+      "profession": "Architect"
+    },
+    {
+      "_id": "654b4969168d6860d49d6cb3",
+      "user_name": "Sarah Davis",
+      "comment": "The experience I had with this service was great. Their prompt and efficient approach left me satisfied. As a graphic designer, I appreciate a professional touch, and they delivered that. I recommend their services to others in need.",
+      "rating": 4,
+      "img": "https://cdn.gadgets360.com/content/assets/entertainment/shah-rukh-khan-poster.jpg",
+      "profession": "Graphic Designer"
+    }
+  ]

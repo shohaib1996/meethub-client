@@ -1,20 +1,21 @@
-import Navbar from "../../common-components/navbar/Navbar"
-import Advertisement from "./advertisement/Advertisement"
-import Banner from "./banner/Banner"
-import FeaturedRooms from "./FeaturedRooms/FeaturedRooms"
-import WhyChooseUs from "./whyChooseUs/WhyChooseUs"
-
+import Advertisement from "./advertisement/Advertisement";
+import Banner from "./banner/Banner";
+import FeaturedRooms from "./FeaturedRooms/FeaturedRooms";
+import VerticalSteps from "./steps/Steps";
+import Testimonial from "./testimonial/Testimonial";
+import WhyChooseUs from "./whyChooseUs/WhyChooseUs";
 
 const Home = () => {
   return (
     <>
-    <Navbar></Navbar>
-    <Banner></Banner>
-    <Advertisement></Advertisement>
-    <FeaturedRooms></FeaturedRooms>
-    <WhyChooseUs></WhyChooseUs>
+      <Banner></Banner>
+      <Advertisement></Advertisement>
+      <FeaturedRooms></FeaturedRooms>
+      <WhyChooseUs></WhyChooseUs>
+      <VerticalSteps></VerticalSteps>
+      <Testimonial></Testimonial>
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
