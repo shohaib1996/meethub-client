@@ -7,37 +7,35 @@ import Login from "../pages/login/Login";
 import Register from "../pages/register/Register";
 import MeetingRooms from "../pages/meeting-rooms/MeetingRooms";
 
-
-
 export const router = createBrowserRouter([
-    {
-     path: "/",
-     element: <App></App>,
-     children: [
-        {
-            path: "/",
-            element: <Home></Home>
-        },
-        {
-            path: "meeting-rooms",
-            element: <MeetingRooms></MeetingRooms>
-        },
-        {
-            path: "contact",
-            element: <ContactUs></ContactUs>
-        },
-        {
-            path: "about",
-            element: <AboutUs></AboutUs>
-        },
-        {
-            path: "login",
-            element: <Login></Login>
-        },
-        {
-            path: "register",
-            element: <Register></Register>
-        }
-     ]
-    }
-])
+  {
+    path: "/",
+    element: <App></App>,
+    children: [
+      {
+        path: "/",
+        element: <Home></Home>,
+      },
+      {
+        path: "meeting-rooms",
+        element: <MeetingRooms></MeetingRooms>,
+      },
+      {
+        path: "contact",
+        element: <ContactUs></ContactUs>,
+      },
+      {
+        path: "about",
+        element: <AboutUs></AboutUs>,
+      },
+    ],
+  },
+  {
+    path: "login",
+    element: <Login></Login>,
+  },
+  {
+    path: "register",
+    element: <Register></Register>,
+  },
+]);

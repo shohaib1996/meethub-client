@@ -1,5 +1,5 @@
 import { Button, Card, Col, Flex, Grid, Row } from "antd";
-import { useGetAllRoomsQuery } from "../../../redux/room/room.api";
+import { useGetAllRoomsQuery } from "../../../redux/features/room/room.api";
 import Container from "../../../utils/container/Container";
 import Spinner from "../../../utils/spinner/Spinner";
 import Meta from "antd/es/card/Meta";
