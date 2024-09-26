@@ -1,26 +1,19 @@
 import { NavLink } from "react-router-dom";
 
 const NavbarLinks = () => {
-  const routes: string[] = [
-    "/",
-    "/meeting-rooms",
-    "/about",
-    "/contact",
-    "/dashboard",
-  ];
+  const routes: string[] = ["/", "/meeting-rooms", "/about", "/contact"];
 
   const navbarItem: string[] = [
     "Home",
     "Meeting Rooms",
     "About Us",
     "Contact Us",
-    "Dashboard",
   ];
   return (
     <>
       {navbarItem.map((item, index) => (
         <li key={index}>
-         <NavLink
+          <NavLink
             to={routes[index]}
             className={({ isActive, isPending }) =>
               isPending

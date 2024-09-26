@@ -57,8 +57,8 @@ const Testimonial = () => {
                 prevEl: ".custom-swiper-button-prev",
                 nextEl: ".custom-swiper-button-next",
               }}
-              onSlideChange={() => console.log("slide change")}
-              onSwiper={(swiper) => console.log(swiper)}
+              // onSlideChange={() => console.log("slide change")}
+              // onSwiper={(swiper) => console.log(swiper)}
             >
               {testimonials.map((testimonial) => (
                 <SwiperSlide key={testimonial._id}>

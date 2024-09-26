@@ -1,11 +1,15 @@
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { Button, Checkbox, Flex, Form, Input, Typography } from "antd";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Container from "../../utils/container/Container";
 import Lottie from "lottie-react";
 import loging from "../../assets/login.json";
 import { useLoginMutation } from "../../redux/features/user/user.api";
 import { toast } from "sonner";
+import { verifyToken } from "../../utils/verifyToken/verifyToken";
+import { useAppDispatch } from "../../redux/hooks/hooks";
+import { setUser } from "../../redux/features/user/authSlice";
+
 
 interface ApiError {
   data?: {
@@ -14,6 +18,8 @@ interface ApiError {
 }
 
 const Login = () => {
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate()
   const [userLogin] = useLoginMutation();
   const onFinish = async (values: any) => {
     const toastId = toast.loading("Loading for Login");
@@ -22,8 +28,12 @@ const Login = () => {
       const res = await userLogin(values).unwrap();
 
       if (res?.success === true) {
+        const user = verifyToken(res?.token);
+        console.log("user", user);
+        //* set user & token to local state
+        dispatch(setUser({ user: user, token: res?.token }));
         toast.success("Login Successful", { id: toastId, duration: 2000 });
-        // navigate("/login");
+        navigate("/");
       }
     } catch (err) {
       const typedErr = err as ApiError;

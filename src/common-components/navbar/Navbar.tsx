@@ -1,8 +1,13 @@
 import { Link } from "react-router-dom";
 import Container from "../../utils/container/Container";
 import NavbarLinks from "./navbarLinks/NavbarLinks";
+import { useAppSelector } from "../../redux/hooks/hooks";
+
+import DropdownMenu from "../../components/dropdown/DropdownMenu";
 
 const Navbar = () => {
+  const user = useAppSelector((state) => state.auth.user);
+ 
   return (
     <div>
       <Container>
@@ -44,9 +49,13 @@ const Navbar = () => {
             </ul>
           </div>
           <div className="navbar-end space-x-2">
-            <Link to="/login">
-              <a className="btn">Login</a>
-            </Link>
+            {user ? (
+              <DropdownMenu></DropdownMenu>
+            ) : (
+              <Link to="/login">
+                <a className="btn">Login</a>
+              </Link>
+            )}
           </div>
         </div>
       </Container>

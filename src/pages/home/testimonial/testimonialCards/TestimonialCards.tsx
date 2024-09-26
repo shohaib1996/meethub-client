@@ -11,7 +11,7 @@ export interface Testimonial {
 
 const TestimonialCards = ({ testimonial }: { testimonial: Testimonial }) => {
   const { user_name, comment, img, rating, profession } = testimonial;
-  console.log(testimonial);
+  // console.log(testimonial);
   return (
     <div className="space-y-6 px-12 py-5 border-2 border-[#F3F3F3] round">
       <div className="flex justify-between items-center flex-col lg:flex-row">
