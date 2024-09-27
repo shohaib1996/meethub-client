@@ -5,6 +5,7 @@ import Spinner from "../../../utils/spinner/Spinner";
 import Meta from "antd/es/card/Meta";
 import { TRoom } from "../../../types/room.type";
 import { FaArrowRightLong } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 const { useBreakpoint } = Grid;
 
 const FeaturedRooms = () => {
@@ -51,7 +52,9 @@ const FeaturedRooms = () => {
                 <p>Capacity: {room.capacity}</p>
                 <p>Price Per Slot: ${room.pricePerSlot}</p>
                 <Flex justify="end">
-                  <Button>See Details</Button>
+                  <Link to={`/room/${room?._id}`}>
+                    <Button>See Details</Button>
+                  </Link>
                 </Flex>
               </Card>
             </Col>
@@ -67,9 +70,11 @@ const FeaturedRooms = () => {
           }}
           wrap
         >
-          <Button className="shadow-none" size="large">
-            See More <FaArrowRightLong></FaArrowRightLong>
-          </Button>
+          <Link to="/meeting-rooms">
+            <Button className="shadow-none" size="large">
+              See More <FaArrowRightLong></FaArrowRightLong>
+            </Button>
+          </Link>
         </Flex>
       </Container>
     </div>
