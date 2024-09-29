@@ -20,7 +20,19 @@ const authApi = baseApi.injectEndpoints({
         };
       },
     }),
+    getSingleUser: builder.query({
+      query: (args) => {
+        const { email } = args;
+        console.log(email);
+        
+        return {
+          url: `auth/user?email=${email}`,
+          method: "GET",
+        };
+      },
+    }),
   }),
 });
 
-export const { useRegisterMutation, useLoginMutation } = authApi;
+export const { useRegisterMutation, useLoginMutation, useGetSingleUserQuery } =
+  authApi;

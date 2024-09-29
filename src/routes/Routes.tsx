@@ -10,6 +10,13 @@ import SingleRoom from "../components/singleRoom/SingleRoom";
 import PrivateRoute from "../components/privateRoute/PrivateRoute";
 import MyBookings from "../pages/myBookings/MyBookings";
 import BookingPage from "../components/bookingPage/BookingPage";
+import CheckOutPage from "../components/checkOut/CheckOutPage";
+import DashBoard from "../layout/dashBoard/DashBoard";
+import RoomList from "../pages/dashboardPages/roomList/RoomList";
+import SlotList from "../pages/dashboardPages/slotList/SlotList";
+import AddRoom from "../pages/dashboardPages/addRoom/AddRoom";
+import BookingList from "../pages/dashboardPages/bookingList/BookingList";
+import AddSlot from "../pages/dashboardPages/addSlot/AddSlot";
 
 export const router = createBrowserRouter([
   {
@@ -41,6 +48,14 @@ export const router = createBrowserRouter([
         ),
       },
       {
+        path: "checkout",
+        element: (
+          <PrivateRoute role={["user"]}>
+            <CheckOutPage />
+          </PrivateRoute>
+        ),
+      },
+      {
         path: "my-bookings",
         element: (
           <PrivateRoute role={["user"]}>
@@ -66,5 +81,20 @@ export const router = createBrowserRouter([
   {
     path: "register",
     element: <Register></Register>,
+  },
+  {
+    path: "dashboard",
+    element: (
+      <PrivateRoute role={["admin"]}>
+        <DashBoard/>
+      </PrivateRoute>
+    ),
+    children: [
+      { path: "rooms", element: <PrivateRoute role={["admin"]}><RoomList /></PrivateRoute> },
+      { path: "add-room", element: <PrivateRoute role={["admin"]}><AddRoom /></PrivateRoute> },
+      { path: "slots", element: <PrivateRoute role={["admin"]}><SlotList /></PrivateRoute> },
+      { path: "add-slot", element: <PrivateRoute role={["admin"]}><AddSlot /></PrivateRoute> },
+      { path: "bookings", element: <PrivateRoute role={["admin"]}><BookingList /> </PrivateRoute>},
+    ]
   },
 ]);

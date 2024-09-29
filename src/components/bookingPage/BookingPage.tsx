@@ -1,6 +1,6 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Container from "../../utils/container/Container";
-import { Button, DatePicker, DatePickerProps } from "antd";
+import { Button, Checkbox, DatePicker, DatePickerProps } from "antd";
 import { useEffect, useState } from "react";
 import { TSlot } from "../../types/slot.type";
 import axios from "axios";
@@ -13,6 +13,9 @@ const BookingPage = () => {
 
   const [selectedDate, setSelectedDate] = useState<string>("");
   const [slotsByRoom, setSlotsByRoom] = useState<TSlot[]>([]);
+  const [selectedSlots, setSelectedSlots] = useState<
+  { slotId: string; startTime: string; endTime: string }[]
+>([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -44,6 +47,27 @@ const BookingPage = () => {
 
   console.log("Slots by room:", slotsByRoom);
 
+  const onChangeCheckBox = (
+    checked: boolean,
+    slotId: string,
+    startTime: string,
+    endTime: string
+  ) => {
+    setSelectedSlots((prevSelectedSlots) => {
+      if (checked) {
+        console.log(startTime, endTime);
+
+        // Add the slot details if it's checked
+        return [...prevSelectedSlots, { slotId, startTime, endTime }];
+      } else {
+        // Remove the slot details if it's unchecked
+        return prevSelectedSlots.filter((slot) => slot.slotId !== slotId);
+      }
+    });
+  };
+
+  console.log(selectedSlots);
+
   return (
     <Container>
       <div className="min-h-screen">
@@ -52,14 +76,20 @@ const BookingPage = () => {
         </h1>
         <div className="my-8 flex justify-center items-center">
           <div className="flex-1">
-            <p className="text-3xl mb-5">Select booking date</p>
+            <p className="text-2xl mb-3">Select booking date</p>
             <DatePicker onChange={onChange} style={{ width: 300 }} />
-            <p className="text-3xl mt-5 mb-5">Available time slots</p>
+            <p className="text-2xl mt-5 mb-3">Available time slots</p>
             {slotsByRoom && slotsByRoom.length > 0 ? (
               <div>
                 {slotsByRoom.map((slot: TSlot) => (
-                  <li key={slot._id} className="font-bold">
-                    {slot.startTime} - {slot.endTime}
+                  <li key={slot._id} className="font-bold list-none">
+                    <Checkbox
+                      onChange={(e) =>
+                        onChangeCheckBox(e.target.checked, slot._id, slot.startTime, slot.endTime)
+                      }
+                    >
+                      {slot.startTime} - {slot.endTime}
+                    </Checkbox>
                   </li>
                 ))}
               </div>
@@ -73,9 +103,23 @@ const BookingPage = () => {
             <p>Phone: {user?.phone}</p>
             <p>Email: {user?.email} </p>
             <p>Address: {user?.address}</p>
-            <Button style={{ marginTop: 20 }} type="primary" block>
-              Checkout
-            </Button>
+            <Link
+              to="/checkout"
+              state={{
+                roomId: id,
+                selectedDate,
+                selectedSlots,
+              }}
+            >
+              <Button
+                disabled={selectedSlots.length === 0}
+                style={{ marginTop: 20 }}
+                type="primary"
+                block
+              >
+                Checkout
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

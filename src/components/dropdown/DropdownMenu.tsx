@@ -19,7 +19,7 @@ const DropdownMenu = () => {
     items.push({
       key: "1",
       label: (
-        <Link to="/my-bookings" target="_blank" rel="noopener noreferrer">
+        <Link to="/my-bookings" rel="noopener noreferrer">
           My Bookings
         </Link>
       ),
@@ -30,7 +30,7 @@ const DropdownMenu = () => {
     items.push({
       key: "2",
       label: (
-        <Link to="/dashboard" target="_blank" rel="noopener noreferrer">
+        <Link to="/dashboard" rel="noopener noreferrer">
           Dashboard
         </Link>
       ),
