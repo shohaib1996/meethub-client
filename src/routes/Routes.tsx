@@ -18,12 +18,13 @@ import AddRoom from "../pages/dashboardPages/addRoom/AddRoom";
 import BookingList from "../pages/dashboardPages/bookingList/BookingList";
 import AddSlot from "../pages/dashboardPages/addSlot/AddSlot";
 import DashboardPage from "../components/dashboardPage/DashboardPage";
-
+import ErrorPage from "../pages/error/ErrorPage";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
