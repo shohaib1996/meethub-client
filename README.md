@@ -69,7 +69,7 @@ MeetHub offers various features, including:
 - **Backend:** Node.js, Express.js, Mongoose
 - **Environment Management:** dotenv
 - **Validation:** Zod
-- **Other Tools:** ESLint, Prettier, TypeScript, Redux, SADC
+- **Other Tools:** ESLint, Prettier, TypeScript, Redux, ant design
 
 ---
 
