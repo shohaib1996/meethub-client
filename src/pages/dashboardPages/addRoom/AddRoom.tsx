@@ -5,6 +5,7 @@ import { useCreateRoomMutation } from "../../../redux/features/roomManagement/ro
 const AddRoom = () => {
   const token = useAppSelector((state) => state.auth.token); // Get the token from Redux state
   const [createRoom] = useCreateRoomMutation(); // Get the mutation hook
+  const [form] = Form.useForm();
 
   const handleCreateRoom = async (values: any) => {
     const roomData = {
@@ -25,6 +26,7 @@ const AddRoom = () => {
     try {
       await createRoom(roomInfo).unwrap();
       toast.success("Room added successfully!");
+      form.resetFields()
     } catch (error) {
       if ((error as any)?.data?.errorMessages?.[0]?.message) {
         toast.error((error as any).data.errorMessages[0].message);
