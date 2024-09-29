@@ -7,7 +7,7 @@ import {
   UploadOutlined,
 } from "@ant-design/icons";
 
-import { Outlet, useNavigate } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 
 const DashBoard = () => {
   const navigate = useNavigate();
@@ -28,6 +28,9 @@ const DashBoard = () => {
       >
         <div className="demo-logo-vertical" />
         <Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]}>
+          <div className="flex items-center justify-center">
+            <Link to="/" className="p-2 text-center text-white font-bold text-xl">MeetHub</Link>
+          </div>
           <Menu.SubMenu
             key="sub1"
             icon={<AppstoreOutlined />}

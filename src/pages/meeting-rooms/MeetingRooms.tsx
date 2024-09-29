@@ -9,6 +9,8 @@ import Meta from "antd/es/card/Meta";
 import Input, { SearchProps } from "antd/es/input";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import ScrollToTop from "../../components/scrollToTop/ScrollToTop";
+import useDebounce from "../../redux/hooks/useDeounce/useDebounce";
 
 const MeetingRooms = () => {
   const [searchQuery, setSearchQuery] = useState<string>("");
@@ -17,8 +19,9 @@ const MeetingRooms = () => {
   const [selectedPriceRange, setSelectedPriceRange] = useState<string>("");
 
   const [sortOption, setSortOption] = useState<string>("");
+  const debounceSearch = useDebounce(searchQuery, 1000)
   const queryParameter = {
-    searchQuery,
+    searchQuery: debounceSearch,
     selectedCapacityRange,
     selectedPriceRange,
     sortOption,
@@ -140,6 +143,7 @@ const MeetingRooms = () => {
             ))}
           </Row>
         </div>
+        <ScrollToTop></ScrollToTop>
       </Container>
     </div>
   );

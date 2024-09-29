@@ -1,3 +1,4 @@
+import ScrollToTop from "../../components/scrollToTop/ScrollToTop";
 import Container from "../../utils/container/Container";
 
 const AboutUs = () => {
@@ -597,6 +598,7 @@ const AboutUs = () => {
           </li>
         </ul>
       </section>
+      <ScrollToTop></ScrollToTop>
     </Container>
   );
 };

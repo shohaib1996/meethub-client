@@ -17,6 +17,8 @@ import SlotList from "../pages/dashboardPages/slotList/SlotList";
 import AddRoom from "../pages/dashboardPages/addRoom/AddRoom";
 import BookingList from "../pages/dashboardPages/bookingList/BookingList";
 import AddSlot from "../pages/dashboardPages/addSlot/AddSlot";
+import DashboardPage from "../components/dashboardPage/DashboardPage";
+
 
 export const router = createBrowserRouter([
   {
@@ -71,7 +73,6 @@ export const router = createBrowserRouter([
         path: "about",
         element: <AboutUs></AboutUs>,
       },
-      
     ],
   },
   {
@@ -86,15 +87,51 @@ export const router = createBrowserRouter([
     path: "dashboard",
     element: (
       <PrivateRoute role={["admin"]}>
-        <DashBoard/>
+        <DashBoard />
       </PrivateRoute>
     ),
     children: [
-      { path: "rooms", element: <PrivateRoute role={["admin"]}><RoomList /></PrivateRoute> },
-      { path: "add-room", element: <PrivateRoute role={["admin"]}><AddRoom /></PrivateRoute> },
-      { path: "slots", element: <PrivateRoute role={["admin"]}><SlotList /></PrivateRoute> },
-      { path: "add-slot", element: <PrivateRoute role={["admin"]}><AddSlot /></PrivateRoute> },
-      { path: "bookings", element: <PrivateRoute role={["admin"]}><BookingList /> </PrivateRoute>},
-    ]
+      { path: "", element: <DashboardPage /> },
+      {
+        path: "rooms",
+        element: (
+          <PrivateRoute role={["admin"]}>
+            <RoomList />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "add-room",
+        element: (
+          <PrivateRoute role={["admin"]}>
+            <AddRoom />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "slots",
+        element: (
+          <PrivateRoute role={["admin"]}>
+            <SlotList />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "add-slot",
+        element: (
+          <PrivateRoute role={["admin"]}>
+            <AddSlot />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "bookings",
+        element: (
+          <PrivateRoute role={["admin"]}>
+            <BookingList />{" "}
+          </PrivateRoute>
+        ),
+      },
+    ],
   },
 ]);

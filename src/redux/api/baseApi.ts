@@ -9,7 +9,7 @@ import {
   } from "@reduxjs/toolkit/query/react";
   
   const baseQuery = fetchBaseQuery({
-    baseUrl: "http://localhost:5000/api/", // Replace with your API base URL
+    baseUrl: "https://meeting-room-system.vercel.app/api/", // Replace with your API base URL
   });
   
   const baseQueryWithoutAuth: BaseQueryFn<

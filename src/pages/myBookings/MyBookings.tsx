@@ -52,7 +52,7 @@ const MyBookings = () => {
           {text === "unconfirmed" ? (
             <Tag style={{ color: "red" }}>{text.toUpperCase()}</Tag>
           ) : (
-            <Tag style={{ color: "greenyellow" }}>{text.toUpperCase()}</Tag>
+            <Tag style={{ color: "green" }}>{text.toUpperCase()}</Tag>
           )}
         </div>
       ),

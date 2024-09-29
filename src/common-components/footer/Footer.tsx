@@ -4,6 +4,7 @@ import {
   FaFacebookSquare,
   FaTwitter,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -21,33 +22,40 @@ const Footer = () => {
                 className="bg-white text-[#7dd3fc] shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
                 type="button"
               >
-                <p className="flex justify-center items-center">
-                  <FaTwitter></FaTwitter>
-                </p>
+                <Link to="https://x.com/?lang=en">
+                  <p className="flex justify-center items-center">
+                    <FaTwitter></FaTwitter>
+                  </p>
+                </Link>
               </button>
               <button
                 className="bg-white text-blue-600 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
                 type="button"
               >
-                <p className="flex justify-center items-center">
-                  <FaFacebookSquare></FaFacebookSquare>
-                </p>
+                <Link to="https://www.facebook.com/">
+                  <p className="flex justify-center items-center">
+                    <FaFacebookSquare></FaFacebookSquare>
+                  </p>
+                </Link>
               </button>
               <button
                 className="bg-white text-pink-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
                 type="button"
               >
-                <p className="flex justify-center items-center">
-                  <FaDribbble></FaDribbble>
-                </p>
+                <Link to="https://dribbble.com/">
+                  <p className="flex justify-center items-center">
+                    <FaDribbble></FaDribbble>
+                  </p>
+                </Link>
               </button>
               <button
                 className="bg-white text-gray-800 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
                 type="button"
               >
+                <Link to="https://github.com/">
                 <p className="flex justify-center items-center">
                   <FaGithub></FaGithub>
-                </p>
+                </p></Link>
               </button>
             </div>
           </div>

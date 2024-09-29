@@ -23,7 +23,7 @@ const BookingPage = () => {
         // Ensure the selectedDate is set before making the request
         if (selectedDate) {
           const res = await axios.get(
-            `http://localhost:5000/api/slots/availability?date=${selectedDate}&roomId=${id}`
+            `https://meeting-room-system.vercel.app/api/slots/availability?date=${selectedDate}&roomId=${id}`
           );
 
           setSlotsByRoom(res.data.data);

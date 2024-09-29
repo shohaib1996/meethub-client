@@ -1,3 +1,4 @@
+import ScrollToTop from "../../components/scrollToTop/ScrollToTop";
 import Advertisement from "./advertisement/Advertisement";
 import Banner from "./banner/Banner";
 import FeaturedRooms from "./FeaturedRooms/FeaturedRooms";
@@ -14,6 +15,7 @@ const Home = () => {
       <WhyChooseUs></WhyChooseUs>
       <VerticalSteps></VerticalSteps>
       <Testimonial></Testimonial>
+      <ScrollToTop></ScrollToTop>
     </>
   );
 };
