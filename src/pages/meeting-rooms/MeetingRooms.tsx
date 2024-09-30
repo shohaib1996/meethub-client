@@ -41,7 +41,7 @@ const MeetingRooms = () => {
   }
 
   if (error) {
-    return <p>Error loading rooms.</p>;
+    return <p className="text-center font-bold my-12 text-4xl min-h-screen">No rooms found.</p>
   }
 
   const onSearch: SearchProps["onSearch"] = (value, _e) =>
