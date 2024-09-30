@@ -19,7 +19,7 @@ const MeetingRooms = () => {
   const [selectedPriceRange, setSelectedPriceRange] = useState<string>("");
 
   const [sortOption, setSortOption] = useState<string>("");
-  const debounceSearch = useDebounce(searchQuery, 1000)
+  const debounceSearch = useDebounce(searchQuery, 1000);
   const queryParameter = {
     searchQuery: debounceSearch,
     selectedCapacityRange,
@@ -33,7 +33,11 @@ const MeetingRooms = () => {
     isLoading,
   } = useGetAllRoomsQuery(queryParameter);
   if (isLoading) {
-    return <div className="flex justify-center items-center min-h-screen"><Spinner /></div>;
+    return (
+      <div className="flex justify-center items-center min-h-screen">
+        <Spinner />
+      </div>
+    );
   }
 
   if (error) {
@@ -67,7 +71,7 @@ const MeetingRooms = () => {
     setSelectedCapacityRange("");
     setSelectedPriceRange("");
     setSortOption("");
-  }
+  };
 
   return (
     <div>
@@ -110,7 +114,12 @@ const MeetingRooms = () => {
                 { value: "desc", label: "Price: High to Low" },
               ]}
             />
-            <Button style={{marginTop: 20, width: "100%"}} type="primary" block onClick={handleResetFilter} >
+            <Button
+              style={{ marginTop: 20, width: "100%" }}
+              type="primary"
+              block
+              onClick={handleResetFilter}
+            >
               Reset Filter
             </Button>
           </div>
@@ -119,28 +128,34 @@ const MeetingRooms = () => {
             align="middle"
             className="mt-16 mb-5 grid lg:grid-cols-3 grid-cols-1 justify-items-center lg:justify-items-start flex-[3]"
           >
-            {getAllRooms?.data.map((room: TRoom) => (
-              <Col key={room._id} xs={24} md={6}>
-                <Card
-                  hoverable
-                  style={{ width: 300 }}
-                  cover={
-                    <img
-                      alt={room.name}
-                      src={room.image}
-                      className="h-[300px] object-cover"
-                    />
-                  }
-                >
-                  <Meta title={room.name} />
-                  <p>Capacity: {room.capacity}</p>
-                  <p>Price Per Slot: ${room.pricePerSlot}</p>
-                  <Flex justify="end">
-                    <Link to={`/room/${room?._id}`}><Button>See Details</Button></Link>
-                  </Flex>
-                </Card>
-              </Col>
-            ))}
+            {getAllRooms?.data && getAllRooms.data.length > 0 ? (
+              getAllRooms.data.map((room: TRoom) => (
+                <Col key={room._id} xs={24} md={6}>
+                  <Card
+                    hoverable
+                    style={{ width: 300 }}
+                    cover={
+                      <img
+                        alt={room.name}
+                        src={room.image}
+                        className="h-[300px] object-cover"
+                      />
+                    }
+                  >
+                    <Meta title={room.name} />
+                    <p>Capacity: {room.capacity}</p>
+                    <p>Price Per Slot: ${room.pricePerSlot}</p>
+                    <Flex justify="end">
+                      <Link to={`/room/${room._id}`}>
+                        <Button>See Details</Button>
+                      </Link>
+                    </Flex>
+                  </Card>
+                </Col>
+              ))
+            ) : (
+              <p className="text-center font-bold my-12">No rooms found.</p>
+            )}
           </Row>
         </div>
         <ScrollToTop></ScrollToTop>
